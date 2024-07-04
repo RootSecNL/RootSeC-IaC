@@ -19,7 +19,9 @@ module "SA" {
 }
 module "BLOB" {
   source   = "./modules/Blob"
-  sname    = var.sname
-  bname   = var.bname
-}
+  bname    = var.bname
+  sname    = var.sname}
+
+
+
 
