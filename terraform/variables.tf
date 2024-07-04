@@ -1,6 +1,6 @@
 variable "rgname" {
   description = "Resource Group Name"
-  default     = "github-action1"
+  default     = "ROOTSEC-GH-IAC"
   type        = string
 }
 variable "location" {
