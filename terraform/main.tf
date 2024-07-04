@@ -6,15 +6,15 @@ terraform {
     key                  = "dev.terraform.tfstate"
   }
 }
-resource "azurerm_resource_group" "ROOTSEC-RG" {
+resource "azurerm_resource_group" "rg" {
   name     = "ROOTSEC-IAC-GITHUB"
   location = "West Europe"
 }
 
-resource "azurerm_storage_account" "ROOTSEC-STOR" {
+resource "azurerm_storage_account" "stor" {
   name                     = "rootseciacstorage"
-  resource_group_name      = azurerm_resource_group.ROOTSEC-RG.name
-  location                 = azurerm_resource_group.ROOTSEC-RG.location
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
     tags = {
@@ -22,9 +22,9 @@ resource "azurerm_storage_account" "ROOTSEC-STOR" {
   }
 }
 
-resource "azurerm_storage_container" "ROOTSEC-CON" {
+resource "azurerm_storage_container" "con" {
   name                  = "iacstorage"
-  storage_account_name  = azurerm_storage_account.ROOTSEC-STOR.name
+  storage_account_name  = azurerm_storage_account.stor.name
   container_access_type = "public"
 }
 
