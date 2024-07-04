@@ -1,3 +1,3 @@
 rgname   = "ROOTSEC-GH-IAC"
 location = "West Europe"
-sname    = "iacstarage"
+sname    = "iacstorage"
