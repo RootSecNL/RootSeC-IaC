@@ -15,14 +15,19 @@ resource "azurerm_storage_account" "stor" {
   name                     = "rootseciacstorage"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
+  allow_blob_public_access = true
   account_tier             = "Standard"
   account_replication_type = "LRS"
+
+  tags = {
+    "mapping_tag" = "85f153b9-8a28-4592-98bc-ff839fd3ad4e"
+  }
 }
 
 resource "azurerm_storage_container" "con" {
   name                  = "iacstorage"
   storage_account_name  = azurerm_storage_account.stor.name
-  container_access_type = "public"
+  container_access_type = "blob"
 }
 
 
