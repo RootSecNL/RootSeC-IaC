@@ -17,4 +17,9 @@ module "SA" {
   rgname   = var.rgname
   location = var.location
 }
+module "BLOB" {
+  source   = "./modules/Blob"
+  sname    = var.sname
+  bname   = var.bname
+}
 
