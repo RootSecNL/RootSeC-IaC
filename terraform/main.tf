@@ -19,10 +19,7 @@ module "SA" {
 }
 module "BLOB" {
   source   = "./modules/Blob"
-  bname    = var.bname
   sname    = var.sname
 }
-
-
 
 
