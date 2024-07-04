@@ -12,7 +12,3 @@ variable "sname" {
   description = "Azure Storage Account"
   type        = string
 }
-variable "bname" {
-  description = "Azure Storage Container"
-  type        = string
-}
