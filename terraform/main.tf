@@ -17,7 +17,8 @@ resource "azurerm_storage_account" "stor" {
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-    tags = {
+  
+  tags = {
     "mapping_tag" = "85f153b9-8a28-4592-98bc-ff839fd3ad4e"
   }
 }
